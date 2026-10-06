@@ -1,0 +1,3 @@
+export function addIncrement(clocks,color,seconds,enabled){return {...clocks,[color]:clocks[color]+(enabled?seconds:0)}}
+export function putArchive(entries,snapshot){if(!snapshot.pgn&&!snapshot.fen)return entries;return [{...snapshot,savedAt:new Date().toISOString()},...entries.filter(x=>x.id!==snapshot.id)].slice(0,30)}
+export function captureSummary(game,moves=game.history({verbose:true})){const captured={w:[],b:[]};for(const m of moves)if(m.captured)captured[m.color].push(m.captured);const values={p:1,n:3,b:3,r:5,q:9,k:0};for(const c of ['w','b'])captured[c].sort((a,b)=>values[b]-values[a]);let balance=0;for(const p of game.board().flat().filter(Boolean))balance+=(p.color==='w'?1:-1)*values[p.type];return {captured,balance}}

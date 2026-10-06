@@ -1,0 +1,8 @@
+{
+  "name": "knight-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests.mjs && node gameplay-tests.mjs"
+  }
+}
