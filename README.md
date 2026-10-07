@@ -25,8 +25,6 @@ Serve the `dist` folder over HTTP so browser modules and the engine worker can l
 python3 -m http.server 8000 --directory dist
 ```
 
-Open http://localhost:8000 in a modern browser. No dependency installation or build step is required. Optional Google Fonts have local fallback fonts.
-
 ## Test
 
 Requires Node.js 20 or newer:
